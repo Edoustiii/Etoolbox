@@ -130,7 +130,7 @@ export default defineConfig({
   },
 
   // تنظیمات Build
-  base: '/Etoolbox',
+  base: '/Etoolbox/',
   outDir: './docs/.vitepress/dist',
   cacheDir: './docs/.vitepress/cache',
   cleanUrls: true,
