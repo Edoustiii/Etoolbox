@@ -151,6 +151,6 @@ export default defineConfig({
 
   // تنظیمات sitemap (اختیاری)
   sitemap: {
-    hostname: 'https://yourusername.github.io/emadtech-tools'
+    hostname: 'https://Edoustiii.github.io/Etoolbox'
   }
 })
