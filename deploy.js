@@ -12,7 +12,7 @@ echo "Building VitePress site..."
 npm run build
 
 # navigate into the build output directory
-cd docs/.vitepress/dist
+cd docs/.vitepress/
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
