@@ -30,7 +30,7 @@ export default defineConfig({
 
     // منوی بالای صفحه
     nav: [
-      { text: '🏠 خانه', link: '/' },
+      { text: '🏠 خانه', link: '/Etoolbox' },
       { text: '📖 درباره', link: '/about' },
       { text: '📖 مطالب آموزشی', link: '/learning' },
     ],
