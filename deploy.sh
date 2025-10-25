@@ -14,7 +14,7 @@ npm run build
 
 # یا از GitHub Actions استفاده کنید (فایل .github/workflows/deploy.yml)
 
-echo "✅ Build completed! Output: docs/.vitepress/dist"
+echo "✅ Build completed! Output: docs/.vitepress/"
 echo ""
 echo "📦 برای دپلوی به GitHub Pages:"
 echo "   1. فایل .github/workflows/deploy.yml را commit کنید"
