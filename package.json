@@ -1,0 +1,27 @@
+{
+  "name": "emadtech-tools",
+  "version": "1.0.0",
+  "description": "لیست بهترین برنامه‌ها و وبسایت‌های کاربردی برای Windows و Android",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "deploy": "vitepress build docs && node deploy.js"
+  },
+  "keywords": [
+    "tools",
+    "windows",
+    "android",
+    "apps",
+    "software",
+    "persian"
+  ],
+  "author": "Emad Dousti",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "terser": "^5.44.0",
+    "vitepress": "^1.0.0"
+  }
+}

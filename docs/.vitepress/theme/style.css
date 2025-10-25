@@ -1,0 +1,662 @@
+/* ================================================
+   🎨 EmadT3ch Tools - استایل سفارشی
+   طراحی: Dark Mode با افکت‌های نئونی
+   ================================================ */
+
+/* ==================== متغیرهای رنگی ==================== */
+:root {
+  /* رنگ‌های اصلی - Dark Theme */
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #1f2937;
+  
+  /* رنگ‌های نئونی */
+  --neon-blue: #58a6ff;
+  --neon-purple: #a371f7;
+  --neon-cyan: #39d0d8;
+  --neon-pink: #ff7b72;
+  
+  /* رنگ‌های متن */
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  
+  /* سایه‌ها و بوردرها */
+  --border-color: rgba(88, 166, 255, 0.2);
+  --shadow-glow: 0 0 20px rgba(88, 166, 255, 0.3);
+  --shadow-card: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  
+  /* فونت */
+  --vp-font-family-base: 'Vazirmatn', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --vp-font-family-mono: 'Cascadia Code', 'Fira Code', monospace;
+}
+
+/* تنظیمات RTL */
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--vp-font-family-base) !important;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* مخفی کردن دکمه تغییر تم (Dark Mode Only) */
+.VPSwitch,
+.VPSwitchAppearance,
+button[aria-label*="تم"],
+button[aria-label*="theme"],
+.dark-mode-toggle {
+  display: none !important;
+}
+
+/* ==================== هدر و نوبار ==================== */
+.VPNav {
+  background: rgba(13, 17, 23, 0.9) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  margin-top: 10px !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.VPNavBar {
+  background: transparent !important;
+  padding: 0 24px !important;
+  height: 64px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.VPNavBar .container,
+.VPNavBar .content {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* فاصله‌گذاری بین عناصر هدر */
+.VPNavBarTitle {
+  margin-left: 24px !important;
+  margin-right: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100%;
+}
+
+.VPNavBarMenuGroup,
+.VPNavBarMenu {
+  gap: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100%;
+}
+
+.VPNavBarMenuLink {
+  padding: 8px 16px !important;
+  margin: 0 4px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+/* لوگو - بدون انیمیشن سنگین */
+.VPImage.logo {
+  filter: drop-shadow(0 0 4px rgba(88, 166, 255, 0.3));
+  transition: opacity 0.2s ease;
+  margin-left: 12px;
+  display: block;
+}
+
+.VPImage.logo:hover {
+  opacity: 0.85;
+}
+
+/* لینک‌های منو - بدون انیمیشن */
+.VPNavBarMenuLink,
+.VPLink {
+  color: var(--text-secondary) !important;
+  transition: color 0.2s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+/* حذف کامل hover برای لینک‌های هدر */
+.VPNavBarMenuLink:hover,
+.VPLink:hover {
+  color: var(--neon-blue) !important;
+  background: rgba(88, 166, 255, 0.06);
+}
+
+/* ==================== محتوای اصلی ==================== */
+.VPDoc {
+  background: transparent;
+}
+
+.vp-doc {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* کانتینر اصلی محتوا */
+.content-container {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-card);
+  margin: 2rem 0;
+}
+
+/* ==================== هدرها ==================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin: 2rem 0;
+  filter: drop-shadow(0 0 20px rgba(88, 166, 255, 0.3));
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--neon-blue) !important;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+h2::before {
+  content: '✨ ';
+  margin-left: 0.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--neon-purple) !important;
+  margin-top: 2rem;
+}
+
+/* ==================== جداکننده‌ها ==================== */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    var(--neon-blue) 20%,
+    var(--neon-purple) 50%,
+    var(--neon-cyan) 80%,
+    transparent 100%
+  );
+  margin: 3rem 0;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(88, 166, 255, 0.4);
+  opacity: 0.8;
+  background-size: 200% 100%;
+}
+
+/* ==================== جداول ==================== */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2rem 0 3rem 0;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-card);
+}
+
+thead {
+  background: linear-gradient(135deg, 
+    rgba(88, 166, 255, 0.2), 
+    rgba(163, 113, 247, 0.2)
+  );
+}
+
+th {
+  padding: 1rem;
+  text-align: right;
+  color: var(--neon-blue) !important;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color);
+  font-size: 1.1rem;
+}
+
+td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+tr:hover {
+  background: rgba(88, 166, 255, 0.08);
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==================== لینک‌ها ==================== */
+a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 6px rgba(57, 208, 216, 0.6);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-cyan));
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover::after {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+/* لینک‌های داخل جدول */
+td a {
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+td a:hover {
+  background: rgba(88, 166, 255, 0.12);
+  padding: 0.25rem 0.75rem;
+}
+
+/* ==================== کدها ==================== */
+code {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--neon-cyan);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.9em;
+  border: 1px solid var(--border-color);
+}
+
+pre {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  box-shadow: var(--shadow-card);
+}
+
+pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* ==================== فوتر ==================== */
+.VPFooter {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.VPFooter a {
+  color: var(--neon-blue);
+  font-weight: 500;
+}
+
+/* ==================== کارت‌ها و باکس‌ها ==================== */
+.custom-block {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-card);
+}
+
+.custom-block.tip {
+  border-right: 4px solid var(--neon-blue);
+}
+
+.custom-block.warning {
+  border-right: 4px solid var(--neon-pink);
+}
+
+.custom-block.danger {
+  border-right: 4px solid #ff3860;
+}
+
+/* ==================== انیمیشن‌ها ==================== */
+/* انیمیشن نرم برای عناصر خاص - فقط در صورت نیاز */
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(163, 113, 247, 0.4));
+  }
+}
+
+@keyframes wave-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ==================== اسکرول بار سفارشی ==================== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  table {
+    font-size: 0.9rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+  }
+  
+  .content-container {
+    padding: 1rem;
+  }
+}
+
+/* ==================== دکمه بازگشت به بالا ==================== */
+.VPDocFooter {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+/* ==================== جستجو ==================== */
+.VPNavBarSearch,
+.DocSearch-Button {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(88, 166, 255, 0.2) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.VPNavBarSearch:hover,
+.DocSearch-Button:hover {
+  border-color: var(--neon-blue) !important;
+  box-shadow: 0 0 12px rgba(88, 166, 255, 0.3) !important;
+  background: rgba(88, 166, 255, 0.08) !important;
+}
+
+/* ==================== Badge ها ==================== */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  color: white;
+  margin: 0 0.25rem;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+}
+
+/* ==================== لیست‌ها ==================== */
+ul, ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+li {
+  margin: 0.5rem 0;
+  color: var(--text-primary);
+}
+
+li::marker {
+  color: var(--neon-blue);
+}
+
+/* ==================== تصاویر ==================== */
+img {
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==================== نقل قول ==================== */
+blockquote {
+  border-right: 4px solid var(--neon-blue);
+  border-left: none;
+  background: var(--glass-bg);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+  backdrop-filter: blur(10px);
+}
+
+blockquote p {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* ==================== دکمه‌های سفارشی ==================== */
+.btn,
+:root {
+  --neon-blue: #58a6ff;
+  --neon-purple: #a371f7;
+  --btn-glow: rgba(88, 166, 255, 0.35);
+  --btn-bg: rgba(255, 255, 255, 0.06);
+  --btn-border: rgba(88, 166, 255, 0.3);
+}
+
+/* حالت پایه */
+.VPButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  background: var(--btn-bg);
+  color: var(--neon-blue);
+  border: 1px solid var(--btn-border);
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px var(--btn-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+/* افکت هاور یکدست */
+.VPButton:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  color: #fff;
+  border-color: rgba(88, 166, 255, 0.6);
+  box-shadow: 
+    0 6px 20px rgba(88, 166, 255, 0.45),
+    0 0 20px rgba(88, 166, 255, 0.25);
+}
+
+/* افکت هنگام کلیک */
+.VPButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(88, 166, 255, 0.25);
+  transition: transform 0.1s ease-in;
+}
+
+/* افکت فوکوس (برای دسترسی بهتر) */
+.VPButton:focus-visible {
+  outline: 2px solid var(--neon-blue);
+  outline-offset: 3px;
+}
+
+/* حالت ثانویه (alt theme) - با رنگ خنثی‌تر */
+.VPButton.alt {
+  background: var(--btn-bg);
+  color: var(--neon-blue);
+  border-color: var(--btn-border);
+  box-shadow: 0 2px 8px rgba(88, 166, 255, 0.15);
+}
+
+.VPButton.alt:hover {
+  background: rgba(88, 166, 255, 0.12);
+  border-color: rgba(88, 166, 255, 0.45);
+  box-shadow:
+    0 4px 16px rgba(88, 166, 255, 0.3),
+    0 0 24px rgba(88, 166, 255, 0.2);
+  color: #fff;
+}
+
+/* حالت غیرفعال (اختیاری) */
+.VPButton:disabled,
+.VPButton.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ==================== Sidebar (در صورت استفاده) ==================== */
+.VPSidebar {
+  background: rgba(13, 17, 23, 0.95);
+  backdrop-filter: blur(12px);
+  border-left: 1px solid var(--border-color);
+}
+
+.VPSidebarItem.level-0 {
+  font-weight: 600;
+  color: var(--neon-blue);
+}
+
+/* ==================== Social Links ==================== */
+.VPSocialLinks {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  height: 100% !important;
+}
+
+.VPSocialLink {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(88, 166, 255, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.VPSocialLink:hover {
+  background: rgba(88, 166, 255, 0.12) !important;
+  border-color: var(--neon-blue) !important;
+  box-shadow: 0 0 16px rgba(88, 166, 255, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+.VPSocialLink svg {
+  width: 20px !important;
+  height: 20px !important;
+  fill: var(--neon-blue) !important;
+  transition: fill 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.VPSocialLink:hover svg {
+  fill: var(--neon-cyan) !important;
+}
+
+/* ==================== تنظیمات چاپ ==================== */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .VPNav,
+  .VPFooter,
+  .VPNavBar {
+    display: none;
+  }
+}

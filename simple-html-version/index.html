@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="لیست بهترین برنامه‌ها و وبسایت‌های کاربردی برای Windows و Android">
+    <meta name="author" content="Emad Dousti">
+    <meta name="theme-color" content="#0d1117">
+    
+    <title>EmadT3ch Tools - ابزارهای کاربردی</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==================== تنظیمات پایه ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #1f2937;
+            --neon-blue: #58a6ff;
+            --neon-purple: #a371f7;
+            --neon-cyan: #39d0d8;
+            --neon-pink: #ff7b72;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+            --border-color: rgba(88, 166, 255, 0.2);
+            --shadow-glow: 0 0 20px rgba(88, 166, 255, 0.3);
+            --shadow-card: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==================== هدر ==================== */
+        header {
+            background: rgba(13, 17, 23, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: var(--shadow-glow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            filter: drop-shadow(0 0 10px var(--neon-blue));
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover img {
+            filter: drop-shadow(0 0 20px var(--neon-cyan));
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* ==================== محتوای اصلی ==================== */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.1), rgba(163, 113, 247, 0.1));
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px var(--neon-blue));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(88, 166, 255, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+        }
+
+        /* ==================== بخش‌ها ==================== */
+        section {
+            margin: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--neon-blue);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h2::before {
+            content: '✨ ';
+            margin-left: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--neon-purple);
+            margin: 2rem 0 1rem 0;
+        }
+
+        /* ==================== جداول ==================== */
+        .table-container {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-card);
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.2), rgba(163, 113, 247, 0.2));
+        }
+
+        th {
+            padding: 1rem;
+            text-align: right;
+            color: var(--neon-blue);
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+            font-size: 1.1rem;
+        }
+
+        td {
+            padding: 0.875rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        tr:hover {
+            background: rgba(88, 166, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        td a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        td a:hover {
+            background: rgba(88, 166, 255, 0.15);
+            padding: 0.25rem 0.75rem;
+            text-shadow: 0 0 8px var(--neon-cyan);
+        }
+
+        /* ==================== جداکننده ==================== */
+        hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                var(--neon-blue) 20%,
+                var(--neon-purple) 50%,
+                var(--neon-cyan) 80%,
+                transparent 100%
+            );
+            margin: 3rem 0;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* ==================== کارت‌های اطلاعاتی ==================== */
+        .info-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .info-box.tip {
+            border-right: 4px solid var(--neon-blue);
+        }
+
+        .info-box.warning {
+            border-right: 4px solid var(--neon-pink);
+        }
+
+        .info-box strong {
+            color: var(--neon-cyan);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ==================== فوتر ==================== */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-box {
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.1), rgba(163, 113, 247, 0.1));
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        footer h3 {
+            color: var(--neon-blue);
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        /* ==================== اسکرول‌بار ==================== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+        }
+
+        /* ==================== Responsive ==================== */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="docs/public/Assets/emadtech-neon.svg" alt="EmadT3ch Logo">
+                <span>EmadT3ch Tools</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#windows-apps">🖥️ Windows</a></li>
+                <li><a href="#android-apps">📱 Android</a></li>
+                <li><a href="#websites">🌐 وبسایت‌ها</a></li>
+                <li><a href="https://t.me/EmadT3ch" target="_blank">📲 تلگرام</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <main>
+        <!-- هیرو -->
+        <div class="hero">
+            <img src="docs/public/Assets/emadtech-neon.svg" alt="EmadT3ch Logo">
+            <h1>🚀 EmadT3ch Tools</h1>
+            <p class="tagline">لیست جامع بهترین نرم‌افزارها و وبسایت‌های کاربردی برای Windows و Android</p>
+            <div class="hero-buttons">
+                <a href="#windows-apps" class="btn">شروع کنید 🚀</a>
+                <a href="https://t.me/EmadT3ch" target="_blank" class="btn btn-secondary">کانال تلگرام 📱</a>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- نرم‌افزارهای Windows -->
+        <section id="windows-apps">
+            <h2>💻 نرم‌افزارهای Windows</h2>
+
+            <h3>🌐 مرورگرها (Browsers)</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>نام</th>
+                            <th>توضیحات</th>
+                            <th>لینک دانلود</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Brave</strong> 🦁</td>
+                            <td>مرورگر امن و سریع با مسدودساز تبلیغات داخلی</td>
+                            <td><a href="https://brave.com" target="_blank">دانلود</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Firefox</strong> 🦊</td>
+                            <td>مرورگر متن‌باز با حفظ حریم خصوصی</td>
+                            <td><a href="https://firefox.com" target="_blank">دانلود</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vivaldi</strong> 🎨</td>
+                            <td>مرورگر قابل شخصی‌سازی برای کاربران حرفه‌ای</td>
+                            <td><a href="https://vivaldi.com" target="_blank">دانلود</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Microsoft Edge</strong> 🔷</td>
+                            <td>مرورگر مایکروسافت بر پایه Chromium</td>
+                            <td><a href="https://microsoft.com/edge" target="_blank">دانلود</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>💬 پیام‌رسان‌ها (Messengers)</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>نام</th>
+                            <th>توضیحات</th>
+                            <th>لینک دانلود</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Telegram Desktop</strong> ✈️</td>
+                            <td>پیام‌رسان امن و سریع</td>
+                            <td><a href="https://desktop.telegram.org" target="_blank">دانلود</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>WhatsApp Desktop</strong> 📱</td>
+                            <td>نسخه دسکتاپ واتساپ</td>
+                            <td><a href="https://whatsapp.com/download" target="_blank">دانلود</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Discord</strong> 🎮</td>
+                            <td>پلتفرم چت برای گیمرها و جوامع</td>
+                            <td><a href="https://discord.com" target="_blank">دانلود</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Signal</strong> 🔐</td>
+                            <td>پیام‌رسان امن با رمزگذاری انتها‌به‌انتها</td>
+                            <td><a href="https://signal.org" target="_blank">دانلود</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>👨‍💻 برنامه‌نویسی و توسعه</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>نام</th>
+                            <th>توضیحات</th>
+                            <th>لینک دانلود</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>VS Code</strong> 💙</td>
+                            <td>محیط توسعه قدرتمند و سبک</td>
+                            <td><a href="https://code.visualstudio.com" target="_blank">دانلود</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Git</strong> 🔀</td>
+                            <td>سیستم کنترل نسخه</td>
+                            <td><a href="https://git-scm.com" target="_blank">دانلود</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Node.js</strong> 🟢</td>
+                            <td>محیط اجرای JavaScript</td>
+                            <td><a href="https://nodejs.org" target="_blank">دانلود</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Docker Desktop</strong> 🐳</td>
+                            <td>پلتفرم کانتینریزیشن</td>
+                            <td><a href="https://docker.com" target="_blank">دانلود</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- نرم‌افزارهای Android -->
+        <section id="android-apps">
+            <h2>📱 نرم‌افزارهای Android</h2>
+
+            <h3>🌐 مرورگرها موبایل</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>نام</th>
+                            <th>توضیحات</th>
+                            <th>لینک دانلود</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Brave Browser</strong> 🦁</td>
+                            <td>مرورگر امن برای اندروید</td>
+                            <td><a href="https://play.google.com/store/apps/details?id=com.brave.browser" target="_blank">Google Play</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Firefox Focus</strong> 🔒</td>
+                            <td>مرورگر سریع با حفظ حریم خصوصی</td>
+                            <td><a href="https://play.google.com/store/apps/details?id=org.mozilla.focus" target="_blank">Google Play</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>DuckDuckGo</strong> 🦆</td>
+                            <td>مرورگر بدون ردیابی</td>
+                            <td><a href="https://play.google.com/store/apps/details?id=com.duckduckgo.mobile.android" target="_blank">Google Play</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🛡️ امنیت Android</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>نام</th>
+                            <th>توضیحات</th>
+                            <th>لینک دانلود</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Bitwarden</strong> 🔑</td>
+                            <td>مدیر رمز عبور</td>
+                            <td><a href="https://play.google.com/store/apps/details?id=com.x8bit.bitwarden" target="_blank">Google Play</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>ProtonVPN</strong> 🌍</td>
+                            <td>VPN امن</td>
+                            <td><a href="https://play.google.com/store/apps/details?id=ch.protonvpn.android" target="_blank">Google Play</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Aegis Authenticator</strong> 🔐</td>
+                            <td>احراز هویت دومرحله‌ای</td>
+                            <td><a href="https://play.google.com/store/apps/details?id=com.beemdevelopment.aegis" target="_blank">Google Play</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- وبسایت‌ها -->
+        <section id="websites">
+            <h2>🌐 وبسایت‌های کاربردی</h2>
+
+            <h3>🎓 آموزش و یادگیری</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>نام</th>
+                            <th>توضیحات</th>
+                            <th>لینک</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>GitHub</strong> 💻</td>
+                            <td>پلتفرم میزبانی کد</td>
+                            <td><a href="https://github.com" target="_blank">github.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Stack Overflow</strong> 💬</td>
+                            <td>انجمن پرسش و پاسخ برنامه‌نویسی</td>
+                            <td><a href="https://stackoverflow.com" target="_blank">stackoverflow.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>MDN Web Docs</strong> 📚</td>
+                            <td>مستندات وب توسعه</td>
+                            <td><a href="https://developer.mozilla.org" target="_blank">developer.mozilla.org</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>freeCodeCamp</strong> 🎯</td>
+                            <td>آموزش رایگان برنامه‌نویسی</td>
+                            <td><a href="https://freecodecamp.org" target="_blank">freecodecamp.org</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🎨 طراحی و منابع</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>نام</th>
+                            <th>توضیحات</th>
+                            <th>لینک</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Figma</strong> 🎨</td>
+                            <td>ابزار طراحی رابط کاربری</td>
+                            <td><a href="https://figma.com" target="_blank">figma.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Canva</strong> 🖼️</td>
+                            <td>طراحی گرافیک آنلاین</td>
+                            <td><a href="https://canva.com" target="_blank">canva.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unsplash</strong> 📷</td>
+                            <td>تصاویر رایگان با کیفیت بالا</td>
+                            <td><a href="https://unsplash.com" target="_blank">unsplash.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Font Awesome</strong> 🔤</td>
+                            <td>آیکون‌های وکتور</td>
+                            <td><a href="https://fontawesome.com" target="_blank">fontawesome.com</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- کارت‌های اطلاعاتی -->
+        <div class="info-box tip">
+            <strong>💡 نکته مهم</strong>
+            <p>این لیست به‌طور مرتب به‌روزرسانی می‌شود. برای دریافت آخرین اخبار و معرفی ابزارهای جدید، حتماً کانال تلگرام ما را دنبال کنید!</p>
+        </div>
+
+        <div class="info-box warning">
+            <strong>⚠️ هشدار امنیتی</strong>
+            <p>همیشه نرم‌افزارها را از منابع رسمی دانلود کنید و از نصب برنامه‌های کرک شده خودداری نمایید.</p>
+        </div>
+    </main>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-box">
+                <h3>📱 با ما در ارتباط باشید</h3>
+                <p>
+                    <strong>کانال تلگرام:</strong> 
+                    <a href="https://t.me/EmadT3ch" target="_blank">@EmadT3ch</a>
+                </p>
+                <p><strong>طراح و توسعه‌دهنده:</strong> Emad Dousti</p>
+            </div>
+            
+            <hr>
+            
+            <p class="copyright">
+                🌟 طراحی و توسعه با ❤️ توسط Emad Dousti<br>
+                ساخته شده با HTML, CSS و VitePress<br>
+                © 2025 EmadT3ch Tools - تمامی حقوق محفوظ است
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
